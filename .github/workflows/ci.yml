@@ -119,7 +119,7 @@ jobs:
 
   build-windows:
     name: Windows Native Build (x64, Release, editor OFF)
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     runs-on: windows-latest
 
     steps:
